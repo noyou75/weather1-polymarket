@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { apiUrl } from "@/lib/api";
 
 // ── Shadow observation types ──────────────────────────────────────────────────
 interface ShadowObs {
@@ -181,10 +182,10 @@ export default function SignalsPage() {
       if (liqFilter)  params.set("liquidity_ok", liqFilter);
 
       const [sRes, sumRes, shStatusRes, shObsRes] = await Promise.all([
-        fetch(`/api/signals/latest?${params}`, { cache: "no-store" }),
-        fetch("/api/signals/summary",           { cache: "no-store" }),
-        fetch("/api/shadow/status",             { cache: "no-store" }),
-        fetch("/api/shadow/observations?limit=50", { cache: "no-store" }),
+        fetch(`${apiUrl("/signals/latest")}?${params}`, { cache: "no-store" }),
+        fetch(apiUrl("/signals/summary"),                { cache: "no-store" }),
+        fetch(apiUrl("/shadow/status"),                  { cache: "no-store" }),
+        fetch(`${apiUrl("/shadow/observations")}?limit=50`, { cache: "no-store" }),
       ]);
       if (!sRes.ok) throw new Error(`Signals API: HTTP ${sRes.status}`);
       const sData: SignalsResponse = await sRes.json();

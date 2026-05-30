@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { apiUrl } from "@/lib/api";
 
 interface LiveMarket {
   market_id: string;
@@ -66,7 +67,7 @@ export default function MarketsPage() {
     setLoading(true);
     setError(null);
     try {
-      const resp = await fetch(`/api/markets/weather?min_liquidity=${minLiq}`, {
+      const resp = await fetch(`${apiUrl("/markets/weather")}?min_liquidity=${minLiq}`, {
         cache: "no-store",
       });
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);

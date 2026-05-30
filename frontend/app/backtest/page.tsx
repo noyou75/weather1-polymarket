@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import MockChart from "@/components/MockChart";
+import { apiUrl } from "@/lib/api";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface RunSummary {
@@ -114,9 +115,9 @@ export default function BacktestPage() {
     setLoading(true); setError(null);
     try {
       const [rRes, mRes, tRes] = await Promise.all([
-        fetch("/api/backtest/latest",  { cache: "no-store" }),
-        fetch("/api/backtest/metrics", { cache: "no-store" }),
-        fetch("/api/backtest/trades?limit=50", { cache: "no-store" }),
+        fetch(apiUrl("/backtest/latest"),          { cache: "no-store" }),
+        fetch(apiUrl("/backtest/metrics"),         { cache: "no-store" }),
+        fetch(`${apiUrl("/backtest/trades")}?limit=50`, { cache: "no-store" }),
       ]);
       if (!rRes.ok) throw new Error(`HTTP ${rRes.status}`);
       setRun(await rRes.json());
@@ -135,7 +136,7 @@ export default function BacktestPage() {
   const triggerBacktest = async () => {
     setRunningBt(true);
     try {
-      await fetch("/api/backtest/run-once", { method: "POST" });
+      await fetch(apiUrl("/backtest/run-once"), { method: "POST" });
       await load();
     } finally {
       setRunningBt(false);

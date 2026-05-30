@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import StatCard from "@/components/StatCard";
 import MockChart from "@/components/MockChart";
+import { apiUrl } from "@/lib/api";
 
 const EQUITY = [
   { date: "May 10", capital: 100.00 },
@@ -77,9 +78,9 @@ export default function OverviewPage() {
   useEffect(() => {
     // Fetch all status in parallel
     Promise.allSettled([
-      fetch("/api/ingestion/status").then(r => r.json()),
-      fetch("/api/weather/status").then(r => r.json()),
-      fetch("/api/wallets/summary").then(r => r.json()),
+      fetch(apiUrl("/ingestion/status")).then(r => r.json()),
+      fetch(apiUrl("/weather/status")).then(r => r.json()),
+      fetch(apiUrl("/wallets/summary")).then(r => r.json()),
     ]).then(([ingRes, wxRes, wlRes]) => {
       setBackendOnline(ingRes.status === "fulfilled");
       if (ingRes.status === "fulfilled") setIngestion(ingRes.value as IngestionStatus);

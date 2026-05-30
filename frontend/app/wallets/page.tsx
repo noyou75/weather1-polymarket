@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { apiUrl } from "@/lib/api";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface Wallet {
@@ -115,8 +116,8 @@ export default function WalletsPage() {
         ...(search && { search }),
       });
       const [wRes, sRes] = await Promise.all([
-        fetch(`/api/wallets/top?${params}`, { cache: "no-store" }),
-        fetch(`/api/wallets/summary`,        { cache: "no-store" }),
+        fetch(`${apiUrl("/wallets/top")}?${params}`, { cache: "no-store" }),
+        fetch(apiUrl("/wallets/summary"),              { cache: "no-store" }),
       ]);
       if (!wRes.ok) throw new Error(`Wallets API: HTTP ${wRes.status}`);
       setWalletsData(await wRes.json());
