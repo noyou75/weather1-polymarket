@@ -51,4 +51,6 @@ desktop.ini
 
 # ── Logs ─────────────────────────────────────────────────────────────────────
 *.log
-logs/
+# Exclude log output directories but NOT frontend/app/logs/ (Next.js page)
+/logs/
+backend/logs/

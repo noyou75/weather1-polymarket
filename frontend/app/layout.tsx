@@ -30,11 +30,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           <span style={{ fontSize: 15 }}>⚠️</span>
           <span>
-            <strong>Phase 6F — Shadow monitoring active · PHASE_7_BLOCKED · No positions · No P&amp;L.</strong> Polymarket markets, wallet snapshot,
-            weather data, and signal engine are live and read-only.
-            P&amp;L and portfolio are still <strong>mock</strong>.
-            No real orders. No paper trading. No private keys.
-            Settlement source not verified — signals are for analysis only.
+            <strong>Phase 6J — Live shadow monitoring · PHASE_7_BLOCKED.</strong>{" "}
+            Markets, signals, wallets, weather, and shadow observations are <strong>live from Railway backend</strong>.
+            Paper trading is blocked. No positions. No P&amp;L. No real orders. No private keys.
           </span>
         </div>
 
