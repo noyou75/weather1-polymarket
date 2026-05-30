@@ -26,6 +26,7 @@ from scheduler import start_scheduler, stop_scheduler
 from routers import (
     markets, signals, portfolio, risk, wallets, backtest,
     logs, ingestion, prices, weather, settlement, shadow,
+    scheduler_router,
 )
 
 logging.basicConfig(
@@ -105,6 +106,7 @@ app.include_router(prices.router)
 app.include_router(weather.router)
 app.include_router(settlement.router)
 app.include_router(shadow.router)
+app.include_router(scheduler_router)
 
 
 @app.get("/", tags=["Health"])

@@ -109,6 +109,25 @@ After the first manual seed, the scheduler handles everything automatically.
 
 ---
 
+## Cloud Scheduler Stagger (Phase 6H)
+
+The scheduler uses absolute cron timing to prevent job collisions on Railway:
+
+| Job | Schedule (UTC) | Purpose |
+|---|---|---|
+| `market_ingestion` | `:00,:05,:10,...,:55` | Poll Gamma API (every 5 min) |
+| `signal_and_shadow` | `:03,:18,:33,:48` | Signal eval then shadow obs (3-min offset after ingestion) |
+| `nws_ingestion` | `0/6/12/18:15` | NWS 7-day forecast (4×/day) |
+| `openmeteo_ingestion` | `1/7/13/19:00` | Open-Meteo forecast (4×/day) |
+| `noaa_ingestion` | `3/15:30` | NASA GISTEMP anomaly (2×/day) |
+| `settlement_verification` | `4:00` | Confirm settlement source (1×/day) |
+
+Key settings: `misfire_grace_time=30s`, `coalesce=True`, `max_instances=1` per job.
+
+Check live scheduler state: `GET /scheduler/status`
+
+---
+
 ## How to Keep Shadow Monitoring Running (Next 7 Days)
 
 ### Step 1 — Start the backend (keep running)
