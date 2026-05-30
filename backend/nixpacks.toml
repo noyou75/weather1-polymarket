@@ -1,0 +1,12 @@
+# Nixpacks configuration for Railway deployment
+# Railway auto-detects Python via pyproject.toml and uses nixpacks to build.
+# This file ensures the correct Python version and uv are available.
+
+[phases.setup]
+nixPkgs = ["python312", "uv"]
+
+[phases.install]
+cmds = ["uv sync --frozen"]
+
+[start]
+cmd = "uv run uvicorn main:app --host 0.0.0.0 --port $PORT"

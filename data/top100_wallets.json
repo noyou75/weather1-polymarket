@@ -1,0 +1,1638 @@
+{
+  "snapshot_date": "2026-05",
+  "count": 100,
+  "traders": [
+    {
+      "rank": 1,
+      "wallet_address": "0xf2f6af4f27ec2dcf4072095ab804016e14cd5817",
+      "username": "gopfan2",
+      "x_username": "r_gopfan",
+      "verified": false,
+      "pnl_usd": 350530.43,
+      "volume_usd": 4600000.85,
+      "efficiency_pct": 7.6202,
+      "strategies": [
+        "Multi-Wallet",
+        "Sharp Selector"
+      ],
+      "strategy_detail": "The dominant weather trader on Polymarket. gopfan2 is one of two wallets operated by the same trader (the other being 'gopfan', rank 4). Together they have extracted over $468K from weather markets. The operator bets large on global temperature anomaly markets \u2014 particularly 'hottest month on record' events \u2014 using what appears to be a solid understanding of climate science and NOAA/NASA data. Key wins include a $198,870 payout on the Global Heat Increase 2024 event and a $178,799 win on the January 2025 temperature anomaly market. Strategy: concentrated, high-conviction positions on well-researched climate data outcomes. Holds positions to resolution rather than trading in and out. The 'gopfan2' wallet appears to be a newer account used for larger positions after the original 'gopfan' wallet established the approach.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 2,
+      "wallet_address": "0x44c1dfe43260c94ed4f1d00de2e1f80fb113ebc1",
+      "username": "aenews2",
+      "x_username": "aenews",
+      "verified": false,
+      "pnl_usd": 288120.83,
+      "volume_usd": 10087862.43,
+      "efficiency_pct": 2.8561,
+      "strategies": [
+        "Multi-Wallet",
+        "Volume Whale"
+      ],
+      "strategy_detail": "Second-ranked all-time with $288K PnL on over $10M in volume (efficiency ~2.9%). aenews2 is part of a cluster of at least three accounts (aenews, aenews2, aenews-915, aebonds) run by the same operator. The biggest single trade: $266,992 profit on '2024 July hottest on record?' with $415K wagered. aenews2 also won big on '2024 August hottest on record?' wagering $457K. Strategy: high-volume systematic betting on monthly global temperature records. The operator spreads capital across multiple wallets, likely for position-sizing flexibility or to stay under detection thresholds. Deep familiarity with climate anomaly markets. Often takes YES on 'hottest on record' markets ahead of official data releases.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 3,
+      "wallet_address": "0x594edb9112f526fa6a80b8f858a6379c8a2c1c11",
+      "username": "ColdMath",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 131190.35,
+      "volume_usd": 10578505.67,
+      "efficiency_pct": 1.2402,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "Third overall with $131K PnL on a massive $10.5M in volume (efficiency ~1.24%). ColdMath is a high-volume market participant who trades across many weather contracts simultaneously. The low efficiency ratio suggests either a market-making approach (providing liquidity and earning small edges), a hedging strategy across multiple correlated positions, or systematic losses offset by larger wins. Despite the low efficiency, consistency and volume make ColdMath one of the most active weather traders. Strategy: broad-market systematic trading with a focus on temperature anomaly and global heat index markets. Likely uses quantitative models informed by meteorological forecasts.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 4,
+      "wallet_address": "0x6af75d4e4aaf700450efbac3708cce1665810ff1",
+      "username": "gopfan",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 118426.47,
+      "volume_usd": 739900.98,
+      "efficiency_pct": 16.0057,
+      "strategies": [
+        "Multi-Wallet",
+        "Sharp Selector"
+      ],
+      "strategy_detail": "The original 'gopfan' wallet \u2014 older account of the same operator behind rank-1 gopfan2. With $118K PnL on only $739K volume (efficiency ~16%), this is one of the most efficient top-10 wallets. Key win: $159K payout on '2024 July hottest on record?'. The high efficiency suggests this wallet was used for smaller, more selective positions while gopfan2 scaled up. Strategy identical to gopfan2: climate-data-informed betting on temperature record events, concentrating capital on high-confidence outcomes.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 16.0% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 5,
+      "wallet_address": "0xe5c8026239919339b988fdb150a7ef4ea196d3e7",
+      "username": "bama124",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 86600.55,
+      "volume_usd": 410556.07,
+      "efficiency_pct": 21.0935,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$86.6K PnL on $410K volume = 21.1% efficiency \u2014 outstanding. bama124's biggest single trade was $388,683 returned on '2024 July hottest on record?' (wagered $303,877 for an ~$85K profit). This is a classic high-conviction, single-trade approach. The trader identified the July 2024 heat anomaly early and bet heavily. Strategy: opportunistic, concentrated betting on high-probability climate events. Very selective \u2014 few trades but large positions when conviction is high. Likely monitors NWS/NOAA monthly temperature data closely.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 21.1% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 6,
+      "wallet_address": "0x0f37cb80dee49d55b5f6d9e595d52591d6371410",
+      "username": "Hans323",
+      "x_username": "Hans323",
+      "verified": false,
+      "pnl_usd": 81109.02,
+      "volume_usd": 7109443.36,
+      "efficiency_pct": 1.1409,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$81K PnL on $7.1M volume (efficiency ~1.14%). Hans323 is a very high-volume trader with an active X presence under the same handle. The low efficiency relative to volume is consistent with a market-making or liquidity-providing style, or systematic trading across many small weather positions. Active across a wide range of weather contract types. Strategy: broad systematic participation in weather markets, likely using automated or semi-automated order flow to capture small edges at high volume.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 7,
+      "wallet_address": "0x05e70727a2e2dcd079baa2ef1c0b88af06bb9641",
+      "username": "Handsanitizer23",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 71174.4,
+      "volume_usd": 953274.81,
+      "efficiency_pct": 7.4663,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$71K on ~$953K volume (7.5% efficiency). A solid mid-volume sharp trader. The name suggests a retail participant who became a specialist in weather markets. Good efficiency implies selective position-taking rather than blanket market participation. Strategy: moderate-conviction weather market trading, likely focused on temperature anomaly and seasonal weather events, with above-average accuracy on long-horizon climate calls.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 8,
+      "wallet_address": "0xb40e89677d59665d5188541ad860450a6e2a7cc9",
+      "username": "Poligarch",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 69372.2,
+      "volume_usd": 8897276.85,
+      "efficiency_pct": 0.7797,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$69.4K PnL on nearly $8.9M volume (efficiency ~0.78%). One of the highest-volume traders in the category with modest profitability per dollar wagered. The 'Poligarch' handle implies a sophisticated, politically-aware market participant who branches into weather. Strategy: high-frequency or high-volume systematic trading, possibly using weather markets as a hedge or complement to political/macro positions. Razor-thin but consistent edge across enormous volume.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 9,
+      "wallet_address": "0xd8f8c13644ea84d62e1ec88c5d1215e436eb0f11",
+      "username": "automatedAItradingbot",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 64894.5,
+      "volume_usd": 2566237.25,
+      "efficiency_pct": 2.5288,
+      "strategies": [
+        "Bot / Algo"
+      ],
+      "strategy_detail": "The name says it all \u2014 this is an automated system. $64.9K on $2.57M volume (2.5% efficiency). Uses AI/ML models to identify mispriced weather contracts. Strategy: algorithmic detection of pricing inefficiencies in weather markets, likely integrating live meteorological data feeds (NWS, ECMWF, GFS model outputs) with Polymarket price data to find arb opportunities. Consistent, machine-driven execution. One of very few wallets to explicitly self-identify as a trading bot.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 10,
+      "wallet_address": "0x331bf91c132af9d921e1908ca0979363fc47193f",
+      "username": "BeefSlayer",
+      "x_username": "BeefSlayer_",
+      "verified": false,
+      "pnl_usd": 64270.83,
+      "volume_usd": 1468616.27,
+      "efficiency_pct": 4.3763,
+      "strategies": [
+        "Sharp Selector",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$64.3K on $1.47M volume (4.4% efficiency). Has an active X account. BeefSlayer is a well-known Polymarket community figure who specializes in weather. Strategy: active swing trading on weather events with a focus on temperature extremes and seasonal forecasts. Combines meteorological intuition with community intelligence from X/Twitter weather forecasting circles. Regular activity across multiple market types.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 11,
+      "wallet_address": "0xecdbd79566a25693b9971c48d7de84bc05f7da79",
+      "username": "BigMike11",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 62776.72,
+      "volume_usd": 850755.65,
+      "efficiency_pct": 7.3789,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$62.8K on $850K volume (7.4% efficiency). BigMike11 scored one of the all-time biggest single wins in weather: $164,385 returned on '2024 July hottest on record?' (invested $120,185). That one market likely defines most of the PnL. Strategy: opportunistic, high-conviction bets on major climate anomaly events. Willing to put six-figure amounts into a single trade when data supports it strongly.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 12,
+      "wallet_address": "0x15ceffed7bf820cd2d90f90ea24ae9909f5cd5fa",
+      "username": "HondaCivic",
+      "x_username": "0xMarchyel",
+      "verified": false,
+      "pnl_usd": 59188.07,
+      "volume_usd": 7409853.05,
+      "efficiency_pct": 0.7988,
+      "strategies": [
+        "Multi-Wallet",
+        "Volume Whale"
+      ],
+      "strategy_detail": "$59.2K on $7.4M volume (0.8% efficiency). Part of the 'HondaCivic' multi-wallet cluster alongside 'EngineOfHondaCivic' (rank 43) and 'TiresOfHondaCivic' (rank 68). The main wallet trades very high volume. Strategy: the cluster collectively extracts value by splitting positions and capital. The main 'HondaCivic' account trades large volume with thin margins, while sub-accounts make more targeted plays. This fragmentation likely serves to manage risk and avoid attention on any single wallet.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 13,
+      "wallet_address": "0xb74711992caf6d04fa55eecc46b8efc95311b050",
+      "username": "Kapii",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 57190.13,
+      "volume_usd": 1833451.17,
+      "efficiency_pct": 3.1193,
+      "strategies": [
+        "Sharp Selector",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$57.2K on $1.83M volume (3.1% efficiency). Kapii participates broadly across weather contract types. Notable wins include a $39K gain on '2025 September hottest on record?' and a $57K profit on the December 2024 temperature increase market. Strategy: diversified weather portfolio approach \u2014 spreads bets across multiple monthly and seasonal events rather than concentrating on one. Steady, consistent performance across years. Likely uses seasonal climate models.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 14,
+      "wallet_address": "0xacc8e9dcabf9d65a5c78e3bec6941ed53a2b7d08",
+      "username": "WeatherTraderBot",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 57179.74,
+      "volume_usd": 1788233.33,
+      "efficiency_pct": 3.1976,
+      "strategies": [
+        "Bot / Algo"
+      ],
+      "strategy_detail": "Another explicitly named bot with $57.2K on $1.79M volume (3.2% efficiency). WeatherTraderBot likely uses a rules-based or ML-driven system specifically calibrated for weather prediction markets. Strategy: automated weather market trading, integrating forecast ensemble data (ECMWF, GFS, CFS) with real-time Polymarket pricing. Likely runs 24/7 with automated position management. Very close PnL to Kapii (rank 13) suggests possible similar underlying model or data source.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 15,
+      "wallet_address": "0xf1bb700a67e3e8a45dc8160a92f4e0405f41bf09",
+      "username": "aenews-915",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 55093.07,
+      "volume_usd": 598139.14,
+      "efficiency_pct": 9.2107,
+      "strategies": [
+        "Multi-Wallet",
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$55.1K on $598K volume (9.2% efficiency) \u2014 notably more efficient than the main aenews2 wallet. This is a third wallet in the aenews cluster, used for higher-conviction, lower-volume plays. Key win: $242K payout on '2023 Global Heat Increase' (invested ~$210K). The high efficiency suggests this account is reserved for best-conviction trades. Strategy: selective high-confidence climate data plays, operating as the 'sharp' arm of the aenews multi-wallet operation.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 9.2% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 16,
+      "wallet_address": "0x118689b24aead1d6e9507b8068d056b2ec4f051b",
+      "username": "russell110320",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 54356.94,
+      "volume_usd": 1441162.99,
+      "efficiency_pct": 3.7717,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$54.4K on $1.44M volume (3.8% efficiency). A consistent mid-volume trader active across multiple weather contract types. Strategy: broad swing trading on weather and climate markets \u2014 participating regularly in monthly temperature anomaly, seasonal weather patterns, and extreme weather event contracts. Steady accumulation of PnL over time through many moderate-sized positions.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 17,
+      "wallet_address": "0xdaad6f960d507dba148c1ff908db5a28743169cc",
+      "username": "junkbonds",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 51403.6,
+      "volume_usd": 864486.12,
+      "efficiency_pct": 5.9461,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$51.4K on $864K volume (5.9% efficiency). The 'junkbonds' name suggests a high-yield, higher-risk approach. Strategy: selective positioning on weather events with above-average implied probability differentials \u2014 essentially finding 'junk' markets where the odds are mispriced and betting against consensus. Good efficiency implies consistent edge identification.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 18,
+      "wallet_address": "0xc1b399b26020a4f689108e9640fd3dc8ffc8501c",
+      "username": "CoffeeLover",
+      "x_username": "CoffeeLover_pm",
+      "verified": false,
+      "pnl_usd": 51105.09,
+      "volume_usd": 161054.39,
+      "efficiency_pct": 31.7316,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "One of the most remarkable wallets: $51.1K PnL on only $161K in volume = 31.7% efficiency. This is the highest efficiency in the top 20. CoffeeLover makes very few trades but with extraordinary accuracy. Notable wins include $28K on 'Megaquake by August 31?' (invested only $2,840 \u2014 a 10x return) and another megaquake market. Strategy: extremely selective contrarian or low-probability event trading \u2014 spots events where market prices dramatically undervalue or overvalue probability. Very patient \u2014 waits for maximum mispricing before entering. One of the sharpest bettors in the entire weather category.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 31.7% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 19,
+      "wallet_address": "0x5a181dcf3eb53a09fb32b20a5a9312fb8d26f689",
+      "username": "chilling",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 50781.1,
+      "volume_usd": 741105.84,
+      "efficiency_pct": 6.8521,
+      "strategies": [
+        "Sharp Selector",
+        "Multi-Wallet"
+      ],
+      "strategy_detail": "$50.8K on $741K (6.9% efficiency). 'chilling' is likely affiliated with the aenews cluster \u2014 the profile image on biggest wins is the same VLC screenshot. Key win: $544K returned on '2023 Global Heat Increase' (invested $521K for ~$23K net). Another win: $196K on NASA 2023 hottest year record. Strategy: high-conviction, well-researched climate record bets, often with very large nominal positions to extract meaningful profit even at short odds. Particularly active on annual global temperature record markets.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 20,
+      "wallet_address": "0x1f66796b45581868376365aef54b51eb84184c8d",
+      "username": "maskache2",
+      "x_username": "Mask4che",
+      "verified": false,
+      "pnl_usd": 49008.23,
+      "volume_usd": 5050549.04,
+      "efficiency_pct": 0.9704,
+      "strategies": [
+        "Multi-Wallet",
+        "Volume Whale"
+      ],
+      "strategy_detail": "$49K on $5M volume (1.0% efficiency). Part of the 'Maskache' two-wallet cluster (the other being rank 126 'Maskache'). This is the higher-volume account in the pair. X username Mask4che. Strategy: high-volume weather market participation spread across two wallets. The main wallet handles large-scale systematic trading while the secondary wallet takes more targeted positions. Together the cluster profits from scale and diversification.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 21,
+      "wallet_address": "0x1838cca016850ac7185a9b149fe7d0bd2d6629b4",
+      "username": "JoeTheMeteorologist",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 46777.76,
+      "volume_usd": 2702811.27,
+      "efficiency_pct": 1.7307,
+      "strategies": [
+        "Domain Expert"
+      ],
+      "strategy_detail": "$46.8K on $2.7M volume (1.7% efficiency). The username is a strong signal \u2014 this is almost certainly a working meteorologist or someone with professional atmospheric science training. Strategy: leverages domain expertise in atmospheric forecasting to trade weather prediction markets. Likely uses the same forecast models (NWS, ECMWF, etc.) seen by professional forecasters. Participates across a broad range of weather contracts. The relatively lower efficiency vs. expected domain advantage suggests also trading harder-to-call markets, or that professional expertise doesn't always translate directly to market edge.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 22,
+      "wallet_address": "0x57ee70867b4e387de9de34fd62bc685aa02a8112",
+      "username": "HenryTheAtmoPhD",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 46186.44,
+      "volume_usd": 3464306.41,
+      "efficiency_pct": 1.3332,
+      "strategies": [
+        "Domain Expert"
+      ],
+      "strategy_detail": "$46.2K on $3.46M volume (1.3% efficiency). Another domain-expert branded account \u2014 'AtmoPhD' implies a PhD in atmospheric science. Strategy: academically rigorous approach to weather market trading, using statistical climatology and ensemble model output statistics. Wide participation across weather contract types, with edge derived from superior probabilistic forecasting vs. the market crowd. PhD-level understanding of temperature anomaly distributions and climate variability.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 23,
+      "wallet_address": "0xaaec89fcb2ff14b335ddd738edf355ac07038dc8",
+      "username": "aboss",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 38787.58,
+      "volume_usd": 1074084.53,
+      "efficiency_pct": 3.6112,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$38.8K on $1.07M volume (3.6% efficiency). 'aboss' is an active weather market participant with steady positive PnL over time. Strategy: consistent swing trading across temperature and seasonal weather contracts. No single dominant trade \u2014 profit built through regular smaller wins. Reliable but not spectacular performance profile.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 24,
+      "wallet_address": "0x4ffba5035905ddfd5e80db2fcbf83a7b4c62119d",
+      "username": "Protrade2",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 37717.42,
+      "volume_usd": 1661107.41,
+      "efficiency_pct": 2.2706,
+      "strategies": [
+        "Multi-Wallet",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$37.7K on $1.66M volume (2.3% efficiency). Part of the 'protrade' multi-wallet cluster alongside 'protrade3' (rank 27) and 'protrade' (rank 130). This appears to be a systematic operation splitting volume across three accounts. Strategy: systematic weather market trading distributed across multiple wallets, likely for risk management and position sizing flexibility. The three accounts collectively accumulate significant weather market PnL.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 25,
+      "wallet_address": "0x63a49a02c71d3a63f391878ec310dc81a524b5dc",
+      "username": "9985",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 37107.72,
+      "volume_usd": 385980.0,
+      "efficiency_pct": 9.6139,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$37.1K on $386K volume (9.6% efficiency) \u2014 excellent. The pseudonymous '9985' is one of the most efficient traders in the top 30. Biggest single win: $74,745 on 'Highest temperature in NYC on Feb 14?' (invested $39,100 \u2014 a 91% ROI on a single trade). Strategy: hyper-specific local weather event betting. Rather than global climate anomaly markets, '9985' targets specific city/date temperature markets where forecasting models give high-confidence narrow predictions. Highly selective and highly profitable per dollar.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 9.6% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 26,
+      "wallet_address": "0x62d2bcd198bb6eab8b7eeb9d2061815dc02b9eb7",
+      "username": "ANudeEgg",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 36270.19,
+      "volume_usd": 279088.19,
+      "efficiency_pct": 12.996,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$36.3K on $279K volume (13% efficiency) \u2014 outstanding. ANudeEgg is a highly selective bettor with one of the best efficiency ratios in the entire leaderboard. Key win: $117,692 payout on '2024 July hottest on record?' (invested $88,972). Strategy: concentrated bets on high-confidence climate record events. Deploys significant capital on single well-researched positions. 13% efficiency on $279K volume suggests only entering markets with strong conviction.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 13.0% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 27,
+      "wallet_address": "0x1c0f3e4c90a48e4dd93d0abcdf719a5a5f1599d0",
+      "username": "protrade3",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 35771.59,
+      "volume_usd": 1798593.76,
+      "efficiency_pct": 1.9889,
+      "strategies": [
+        "Multi-Wallet",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$35.8K on $1.8M volume (2.0% efficiency). Third wallet of the protrade cluster. Operates on a similar systematic strategy to protrade and Protrade2. The existence of three distinct wallets suggests the operator deliberately distributes positions to avoid liquidity impact and manage exposure across markets.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 28,
+      "wallet_address": "0x8093017f08d8492927eb3b43c8b87aeffe38b208",
+      "username": "Shoemaker34",
+      "x_username": "ckyra61931641",
+      "verified": false,
+      "pnl_usd": 33958.67,
+      "volume_usd": 511511.45,
+      "efficiency_pct": 6.6389,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$34K on $511K volume (6.6% efficiency). An active weather trader with X presence. Strategy: regular swing trading on seasonal and monthly temperature markets. Consistent performance, above-average efficiency among mid-tier traders. Participates across a range of weather contract timeframes.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 29,
+      "wallet_address": "0x584eee598b341109592b985c1a253ab044fa090f",
+      "username": "1-800-LIQUIDITY",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 33506.37,
+      "volume_usd": 908899.47,
+      "efficiency_pct": 3.6865,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$33.5K on $908K volume (3.7% efficiency). The name 'LIQUIDITY' is a hint toward market-making awareness. Strategy: a swing trader with market-making sensibilities \u2014 likely provides liquidity on weather contracts while also taking directional positions when conviction is high. Balances earning bid-ask spread with directional weather bets.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 30,
+      "wallet_address": "0x6297b93ea37ff92a57fd636410f3b71ebf74517e",
+      "username": "neobrother",
+      "x_username": "spydenuevo",
+      "verified": false,
+      "pnl_usd": 32301.76,
+      "volume_usd": 1849193.38,
+      "efficiency_pct": 1.7468,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$32.3K on $1.85M volume (1.7% efficiency). Has an X presence under 'spydenuevo'. Strategy: active diversified weather market participation, trading multiple event types. Consistent accumulation across many positions. Profile image (Iceland flag) may suggest geographic awareness of weather patterns.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 31,
+      "wallet_address": "0x38cc1d1f95d12039324809d8bb6ca6da6cbef88e",
+      "username": "NoonienSoong",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 31479.8,
+      "volume_usd": 5587217.31,
+      "efficiency_pct": 0.5634,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$31.5K on $5.6M volume (0.56% efficiency). Named after the Star Trek android creator \u2014 a nod to AI/robotics themes. Very high volume with modest efficiency suggests systematic or near-automated trading. Strategy: high-frequency weather market participation, likely using algorithmic tools even if not fully automated. Thin but consistent edge at scale.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 32,
+      "wallet_address": "0x1cdd071bb612de6d66d0c882b676c663697de595",
+      "username": "Lavincey",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 31297.75,
+      "volume_usd": 2169913.68,
+      "efficiency_pct": 1.4424,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$31.3K on $2.17M volume (1.4% efficiency). A mid-volume systematic weather trader. Strategy: diversified position-taking across weather contract categories, accumulating PnL through consistent but thin-margin trades. Active across temperature anomaly, precipitation, and extreme weather markets.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 33,
+      "wallet_address": "0xb06a0eae498750ed0acac7e1f759f741c56e52f5",
+      "username": "Ooookey",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 31157.3,
+      "volume_usd": 2907536.2,
+      "efficiency_pct": 1.0716,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$31.2K on $2.9M volume (1.1% efficiency). High-volume weather market participant. Strategy: broad systematic participation across weather contracts, using volume and diversification to generate consistent returns despite per-trade thin margins.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 34,
+      "wallet_address": "0x116db6298abcdefe06f9f5458c293c7de185fbf1",
+      "username": "opopv",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 30808.34,
+      "volume_usd": 2481682.86,
+      "efficiency_pct": 1.2414,
+      "strategies": [
+        "Swing Trader",
+        "Volume Whale"
+      ],
+      "strategy_detail": "$30.8K on $2.48M volume (1.2% efficiency). Strategy: systematic weather market trading with moderate volume. Consistent but modest per-trade profitability. Likely participates in many markets simultaneously to spread risk and capture small edges.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 35,
+      "wallet_address": "0x45580feac3b916a88b7513929e26f86b3adea2b3",
+      "username": "Nowhere-Man",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 30410.34,
+      "volume_usd": 971806.59,
+      "efficiency_pct": 3.1293,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$30.4K on $971K volume (3.1% efficiency). Strategy: selective weather market participation with moderate-sized positions. The literary name (Beatles reference) hints at a thoughtful, contrarian mindset \u2014 possibly betting against consensus on weather events where market prices seem overly influenced by recent trends.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 36,
+      "wallet_address": "0x97eb7ddf9139a3db0be99e81217e20546e219fbe",
+      "username": "khalidakup",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 29585.79,
+      "volume_usd": 1994067.63,
+      "efficiency_pct": 1.4837,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$29.6K on $1.99M volume (1.5% efficiency). A consistent mid-volume weather trader. Strategy: regular participation across weather categories with a diversified approach. Accumulated PnL through steady trading activity over time.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 37,
+      "wallet_address": "0x9977760c6bd6f824cac834d1a36ee99478d63020",
+      "username": "meropi",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 28137.59,
+      "volume_usd": 6917998.58,
+      "efficiency_pct": 0.4067,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$28.1K on $6.9M volume (0.41% efficiency). One of the highest-volume weather traders with very thin margins. Strategy: likely a systematic or near-mechanical trading operation processing enormous order flow across weather contracts. Near-zero efficiency suggests market-making or delta-hedging across correlated positions, extracting small edges on massive scale.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 38,
+      "wallet_address": "0x42fd57f1545f699ed52bb8ae4b4ecb5da63496c0",
+      "username": "jangsunjuu",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 27981.33,
+      "volume_usd": 721440.72,
+      "efficiency_pct": 3.8785,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$28K on $721K volume (3.9% efficiency). A focused weather market trader. Strategy: selective participation in temperature anomaly and seasonal weather contracts. Above-average efficiency relative to volume suggests thoughtful market selection.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 39,
+      "wallet_address": "0xa49b6ea0a604c581f2a9569db42c192b1c487054",
+      "username": "387411007415611814092217897387",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 27189.36,
+      "volume_usd": 2777293.11,
+      "efficiency_pct": 0.979,
+      "strategies": [
+        "Bot / Algo"
+      ],
+      "strategy_detail": "$27.2K on $2.78M volume (1.0% efficiency). The numeric username is a classic bot/algorithmic trader tell \u2014 likely an auto-generated wallet identifier. Strategy: fully automated weather market trading, operating under a system that generates trades based on quantitative signals. No human branding or identity \u2014 purely systematic.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 40,
+      "wallet_address": "0x8278252ebbf354eca8ce316e680a0eaf02859464",
+      "username": "0xf2e346ab",
+      "x_username": "Jean85775283550",
+      "verified": false,
+      "pnl_usd": 26543.25,
+      "volume_usd": 1144077.77,
+      "efficiency_pct": 2.3201,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$26.5K on $1.14M volume (2.3% efficiency). Has an X handle (Jean85775283550). Strategy: active swing trading on weather and climate contracts, with moderate position sizes. Regular participation across multiple market types.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 41,
+      "wallet_address": "0x906f2454a777600aea6c506247566decef82371a",
+      "username": "Railbird",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 25428.45,
+      "volume_usd": 970772.99,
+      "efficiency_pct": 2.6194,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$25.4K on $970K volume (2.6% efficiency). 'Railbird' is a classic gambling term for someone who watches and bets from the rail \u2014 observing carefully before committing. Strategy: patient, selective weather market participation. Watches market movements and enters when mispricing becomes obvious. Conservative position sizing with above-average market selection.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 42,
+      "wallet_address": "0xcd9d30094d5c30be701c6ce633013c0a5e8206b0",
+      "username": "jfm-20",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 24938.42,
+      "volume_usd": 638000.08,
+      "efficiency_pct": 3.9088,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$24.9K on $638K volume (3.9% efficiency). Strategy: focused weather market participation with selective contract entry. Consistent trader with steady PnL accumulation over time.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 43,
+      "wallet_address": "0x08cf0b0fec3d42d9920bb0dfbc49fde635088cbc",
+      "username": "EngineOfHondaCivic",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 24475.62,
+      "volume_usd": 1523216.42,
+      "efficiency_pct": 1.6068,
+      "strategies": [
+        "Multi-Wallet",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$24.5K on $1.52M volume (1.6% efficiency). The second account in the HondaCivic multi-wallet cluster. Named to complement the main 'HondaCivic' account. Handles a different segment of the operator's weather market positions \u2014 likely intermediate-sized trades between the main account's large volume plays and 'TiresOfHondaCivic''s smaller ones.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 44,
+      "wallet_address": "0x77266604e63f5caf08d19caebae0c563ce064aee",
+      "username": "strider2",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 23947.02,
+      "volume_usd": 275689.63,
+      "efficiency_pct": 8.6862,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$23.9K on only $275K volume (8.7% efficiency) \u2014 excellent efficiency ratio. Strategy: very selective weather market participation with high per-dollar returns. Few trades, high conviction. One of the more efficient traders in the top 50.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 8.7% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 45,
+      "wallet_address": "0xb9012e0d9b60d3920286309328b935cdfa609fc4",
+      "username": "Weatherstappen",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 23620.99,
+      "volume_usd": 1154940.45,
+      "efficiency_pct": 2.0452,
+      "strategies": [
+        "Domain Expert",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$23.6K on $1.15M volume (2.0% efficiency). The name fuses 'weather' with F1 champion Verstappen \u2014 implying aggressive, high-skill weather trading. Strategy: active, confident weather market trading with a focus on precision forecasting. Participates broadly but with meteorological conviction behind each position.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 46,
+      "wallet_address": "0xf1faf3f6ad1e0264d6cbecc1a416e7c536be047d",
+      "username": "Hoaqin",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 23384.76,
+      "volume_usd": 427054.54,
+      "efficiency_pct": 5.4758,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$23.4K on $427K volume (5.5% efficiency). Strategy: moderate-volume selective weather market betting. Good efficiency indicates consistent market selection quality.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 47,
+      "wallet_address": "0x6e9108c47fe74fb241be7760d889315c3c39134e",
+      "username": "David32534",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 22945.71,
+      "volume_usd": 345269.11,
+      "efficiency_pct": 6.6457,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$22.9K on $345K volume (6.6% efficiency). Strategy: selective, smaller-volume weather market trading with good accuracy. Efficient use of capital.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 48,
+      "wallet_address": "0x1e1f17412069c0736adfaadf8ee7f46e5612c855",
+      "username": "Brokie",
+      "x_username": "BrokieTrades",
+      "verified": false,
+      "pnl_usd": 22597.15,
+      "volume_usd": 351115.55,
+      "efficiency_pct": 6.4358,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$22.6K on $351K volume (6.4% efficiency). Has an X presence. The self-deprecating 'Brokie' name belies a genuinely sharp trader. Strategy: selective weather market participation, particularly well-calibrated on temperature anomaly markets. Consistent top-50 performer with good risk management.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 49,
+      "wallet_address": "0x34eccd57d85a42273ea46d8699a2666ac600b7cf",
+      "username": "Junhoo2",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 21988.83,
+      "volume_usd": 342192.16,
+      "efficiency_pct": 6.4259,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$22K on $342K volume (6.4% efficiency). Strategy: focused, selective weather market trading with consistent results. Good efficiency in the top-50 cohort.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 50,
+      "wallet_address": "0x8d0930676d559cc8fb7d8af0c555791c1820143f",
+      "username": "vip68",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 21940.06,
+      "volume_usd": 2397681.99,
+      "efficiency_pct": 0.9151,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$21.9K on $2.4M volume (0.91% efficiency). Strategy: high-volume weather market participation with systematic trading across many contracts. Low efficiency per dollar but consistent overall returns through scale.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 51,
+      "wallet_address": "0xde324a83c0fc3051a67dd60be948f7e73210700c",
+      "username": "Cucurella",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 21890.77,
+      "volume_usd": 379174.64,
+      "efficiency_pct": 5.7733,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$21.9K on $379K volume (5.8% efficiency). Named after Spanish footballer Marc Cucurella. Strategy: selective weather market bets with above-average conviction and accuracy.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 52,
+      "wallet_address": "0x81f4293bb164d2ed8efe05509d17788ddeeffee2",
+      "username": "DarbySkees",
+      "x_username": "DSkees72848",
+      "verified": false,
+      "pnl_usd": 21458.9,
+      "volume_usd": 42915.0,
+      "efficiency_pct": 50.0033,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$21.5K on only $42.9K volume = 50% efficiency \u2014 the highest efficiency rate in the top 100. DarbySkees nearly doubled their money. With X presence under DSkees72848, this is almost certainly someone with exceptional weather knowledge making very few, very large, very accurate bets. The tiny volume means this is a highly selective, almost surgical operator who enters only when overwhelmingly confident. Strategy: maximum-conviction weather betting with extraordinary accuracy.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 50.0% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 53,
+      "wallet_address": "0x53501b3d13852aabc77db40b536e625a1098cbc2",
+      "username": "MrFox",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 21382.09,
+      "volume_usd": 113878.07,
+      "efficiency_pct": 18.7763,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$21.4K on $113K volume (18.8% efficiency) \u2014 second-highest efficiency in the top 100. MrFox makes very few trades but with outstanding accuracy. Strategy: patient, hyper-selective weather market hunting. Likely focuses on specific event types where their edge is strong, avoiding markets outside their expertise entirely.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 18.8% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 54,
+      "wallet_address": "0x43cb4ae1f4ddc9e671486c79c9f40a6fd98b84df",
+      "username": "(unnamed-54)",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 20912.26,
+      "volume_usd": 1880722.55,
+      "efficiency_pct": 1.1119,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$20.9K on $1.88M volume (1.1% efficiency). An unbranded/anonymous wallet with moderate-volume systematic participation in weather markets. Strategy: algorithmic or semi-systematic trading across weather contracts.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 55,
+      "wallet_address": "0x46745788e678a6f8ceebcd8bc7e37462b74703ca",
+      "username": "speeda",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 20527.76,
+      "volume_usd": 971739.71,
+      "efficiency_pct": 2.1125,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$20.5K on $971K volume (2.1% efficiency). Strategy: active swing trading on weather contracts with steady volume accumulation and consistent profitability.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 56,
+      "wallet_address": "0x69e7ad68b5f11e97927e4bd938baf7dfb60bd3b0",
+      "username": "InsiderrrZ",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 20527.26,
+      "volume_usd": 102163.3,
+      "efficiency_pct": 20.0926,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$20.5K on $102K volume (20.1% efficiency) \u2014 among the top 5 most efficient wallets in the entire leaderboard. The name 'InsiderrrZ' implies claimed informational advantage. Strategy: extremely selective, possibly contrarian bets on niche weather events. 20%+ efficiency on $102K suggests only entering markets with overwhelming edge. Whether the 'insider' branding reflects real informational advantage or bravado, the results speak for themselves.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 20.1% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 57,
+      "wallet_address": "0xbdcd1a99e6880b8146f61323dcb799bb5b243e9c",
+      "username": "1pixel",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 20471.53,
+      "volume_usd": 761303.6,
+      "efficiency_pct": 2.689,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$20.5K on $761K volume (2.7% efficiency). Strategy: regular weather market participation with moderate volume and consistent returns.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 58,
+      "wallet_address": "0xb1f8aa72eeee3316b39716d2d0ae3fdc13aa2734",
+      "username": "wegotit2green",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 20397.6,
+      "volume_usd": 452677.93,
+      "efficiency_pct": 4.506,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$20.4K on $452K volume (4.5% efficiency). Strategy: moderate-volume selective weather trading. Above-average efficiency in this tier.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 59,
+      "wallet_address": "0x5f211a24da4c005d9438a1ea269673b85ed0b376",
+      "username": "dpnd",
+      "x_username": "dpnd_poly",
+      "verified": false,
+      "pnl_usd": 20185.32,
+      "volume_usd": 12204297.16,
+      "efficiency_pct": 0.1654,
+      "strategies": [
+        "Volume Whale"
+      ],
+      "strategy_detail": "$20.2K PnL on a staggering $12.2M in volume (0.17% efficiency) \u2014 the highest volume in the entire top 100 and one of the lowest efficiency ratios. dpnd is almost certainly a market maker or liquidity provider who earns income through bid-ask spreads rather than directional bets. The nearly break-even directional PnL on this scale implies continuous two-sided quoting. Strategy: professional market-making in weather contracts, providing liquidity to the market while capturing spread income. Has X presence under dpnd_poly.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 60,
+      "wallet_address": "0xae2e04fe9d8ccba5e45ba17ddf9dfbef498c40ad",
+      "username": "(unnamed-60)",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 19850.33,
+      "volume_usd": 761472.67,
+      "efficiency_pct": 2.6068,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$19.9K on $761K volume (2.6% efficiency). Anonymous wallet with steady weather market participation. Strategy: systematic weather contract trading.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 61,
+      "wallet_address": "0x2b2866a724e73bf45af306036f12f20170b4d021",
+      "username": "syacxxa",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 19301.41,
+      "volume_usd": 495571.15,
+      "efficiency_pct": 3.8948,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$19.3K on $495K volume (3.9% efficiency). Strategy: selective weather market participation with moderate volume and good consistency.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 62,
+      "wallet_address": "0x8195b9ebc8e45b37529c5470830d0c96441d145c",
+      "username": "soyeon2235",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 19298.8,
+      "volume_usd": 322958.86,
+      "efficiency_pct": 5.9756,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$19.3K on $323K volume (6.0% efficiency). Strategy: focused weather market trading with selective entry and good accuracy.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 63,
+      "wallet_address": "0xf33f0dfe73e3d1b3d0453e2a02c5d19100d3085c",
+      "username": "pandatown",
+      "x_username": "MosesJerezSchac",
+      "verified": false,
+      "pnl_usd": 19145.31,
+      "volume_usd": 1504733.01,
+      "efficiency_pct": 1.2723,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$19.1K on $1.5M volume (1.3% efficiency). Has X presence. Key win: $69,420 on '2024 July hottest on record?'. Strategy: active weather market swing trading with diverse participation across contracts.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 64,
+      "wallet_address": "0xd75d96a23515172778d3281f53c9180b985100c8",
+      "username": "Varyag",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 18860.14,
+      "volume_usd": 691420.09,
+      "efficiency_pct": 2.7277,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$18.9K on $691K volume (2.7% efficiency). 'Varyag' is a historical Russian warship name \u2014 implying a seasoned, battle-tested operator. Strategy: steady weather market participation with moderate returns.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 65,
+      "wallet_address": "0x2a353ce9e57a51e65814d2fe7cdd4ad3f20741ce",
+      "username": "xX25Xx",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 18841.23,
+      "volume_usd": 93610.22,
+      "efficiency_pct": 20.1273,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$18.8K on $93.6K volume (20.1% efficiency) \u2014 tied with InsiderrrZ for top efficiency. Strategy: ultra-selective weather betting with extraordinary hit rate. Very low volume confirms only enters maximum-conviction positions.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 20.1% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 66,
+      "wallet_address": "0x6a8d1709bfb718d8555d315a983c4816278350f9",
+      "username": "OnlyLuckNoBrain",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 18595.39,
+      "volume_usd": 1478734.5,
+      "efficiency_pct": 1.2575,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$18.6K on $1.48M volume (1.3% efficiency). The self-deprecating name masks a consistently profitable trader. Strategy: broad weather market participation \u2014 regular involvement across many contract types, building steady PnL through volume.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 67,
+      "wallet_address": "0x5f390e4b7d6f06d6756a6c92afdbf7b3176aa78c",
+      "username": "oVyg7f",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 18380.0,
+      "volume_usd": 5697984.91,
+      "efficiency_pct": 0.3226,
+      "strategies": [
+        "Volume Whale",
+        "Bot / Algo"
+      ],
+      "strategy_detail": "$18.4K on $5.7M volume (0.32% efficiency). A high-volume, likely algorithmic participant. The random-string username strongly implies bot/system operation. Strategy: automated high-volume weather market processing at near-zero directional edge, consistent with a market-making or statistical arbitrage approach.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 68,
+      "wallet_address": "0x8fb431f5057112cfdb0e7f566b4b687cb69cb9ed",
+      "username": "TiresOfHondaCivic",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 18204.42,
+      "volume_usd": 476087.23,
+      "efficiency_pct": 3.8238,
+      "strategies": [
+        "Multi-Wallet",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$18.2K on $476K volume (3.8% efficiency). Third and smallest wallet in the HondaCivic cluster. Takes the most targeted, selective positions of the three accounts. Combined, the HondaCivic cluster has ~$102K in weather PnL across $9.4M in total volume.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 69,
+      "wallet_address": "0xf6f79fb0b579918f101bb6d0a264a492ce9de0da",
+      "username": "cyberkurajber",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 18110.73,
+      "volume_usd": 787541.2,
+      "efficiency_pct": 2.2997,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$18.1K on $787K volume (2.3% efficiency). Strategy: consistent weather market trading with broad participation across contract types.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 70,
+      "wallet_address": "0x900e2ba4b715e8e5088899948355d74c796ff6bf",
+      "username": "TheySeemeBuyingTheyHatin",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 18109.24,
+      "volume_usd": 428886.33,
+      "efficiency_pct": 4.2224,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$18.1K on $428K volume (4.2% efficiency). The playful name (riff on Cali Swag District) suggests a retail trader with good instincts. Strategy: selective weather market bets with above-average accuracy and decent returns.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 71,
+      "wallet_address": "0x488c725253fc21c7a9ca812030dc2f6343f98c1c",
+      "username": "WeatherHK",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 17959.04,
+      "volume_usd": 448136.74,
+      "efficiency_pct": 4.0075,
+      "strategies": [
+        "Domain Expert"
+      ],
+      "strategy_detail": "$18K on $448K volume (4.0% efficiency). The 'HK' suffix likely refers to Hong Kong \u2014 this may be a meteorologist or weather enthusiast based in Asia, with expertise in Western Pacific weather systems, typhoons, and Asian climate anomalies. Strategy: domain-specific weather trading informed by HK Observatory or regional meteorological data. May have particular edge in tropical weather and Asian temperature anomaly markets.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 72,
+      "wallet_address": "0xaa7a74b8c754e8aacc1ac2dedb699af0a3224d23",
+      "username": "securebet",
+      "x_username": "germain_marcano",
+      "verified": false,
+      "pnl_usd": 17921.46,
+      "volume_usd": 446194.59,
+      "efficiency_pct": 4.0165,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$17.9K on $446K volume (4.0% efficiency). X presence under germain_marcano. Strategy: careful, risk-aware weather market trading. The 'securebet' name implies conservative position management and preference for higher-probability outcomes.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 73,
+      "wallet_address": "0xafb8523f97af6a310d9c03d4290a81c09c3bd9c1",
+      "username": "AB2",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 17779.75,
+      "volume_usd": 591007.24,
+      "efficiency_pct": 3.0084,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$17.8K on $591K volume (3.0% efficiency). Strategy: regular weather market swing trading with steady, incremental PnL accumulation.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 74,
+      "wallet_address": "0x8e22f7e80a03a36c80a7fe545369f008fc1e3061",
+      "username": "PunxsutawneyPhil",
+      "x_username": "_Yagami_L1ght",
+      "verified": false,
+      "pnl_usd": 17594.5,
+      "volume_usd": 529779.64,
+      "efficiency_pct": 3.3211,
+      "strategies": [
+        "Domain Expert",
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$17.6K on $530K volume (3.3% efficiency). Named after the famous groundhog weather predictor \u2014 a clear weather market specialist identity. X presence as _Yagami_L1ght. Strategy: weather-focused trading with a whimsical identity that belies systematic approach. Likely tracks seasonal and temperature anomaly markets, drawing on both data and the 'lore' of weather prediction communities.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 75,
+      "wallet_address": "0xec86a2d3f69015b1a9382e4dfa8695e1b48760e4",
+      "username": "(unnamed-75)",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 17216.04,
+      "volume_usd": 2152165.08,
+      "efficiency_pct": 0.7999,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$17.2K on $2.15M volume (0.8% efficiency). An anonymous high-volume weather market participant. Strategy: systematic, broad-market trading at scale.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 76,
+      "wallet_address": "0xe9990c7248599d5c7ca5a4301f09da384d9a6f77",
+      "username": "lesse",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 17181.33,
+      "volume_usd": 116754.37,
+      "efficiency_pct": 14.7158,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$17.2K on $117K volume (14.7% efficiency). Excellent efficiency. Strategy: highly selective weather market entry with strong per-dollar returns.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 14.7% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 77,
+      "wallet_address": "0x6356fb47642a028bc09df92023c35a21a0b41885",
+      "username": "fhantombets",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 17149.67,
+      "volume_usd": 167538.35,
+      "efficiency_pct": 10.2363,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$17.1K on $167K volume (10.2% efficiency). Strategy: selective weather market participation, entering with high conviction and good accuracy. 10%+ efficiency on modest volume is commendable.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 10.2% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 78,
+      "wallet_address": "0xc7d02944a76b9f83b199e9090ecc92c82d241f8a",
+      "username": "(unnamed-78)",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 16775.72,
+      "volume_usd": 560562.18,
+      "efficiency_pct": 2.9927,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$16.8K on $560K volume (3.0% efficiency). Anonymous weather market trader with steady returns.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 79,
+      "wallet_address": "0xe25b9180f5687aa85bd94ee309bb72a464320f1b",
+      "username": "WordleAddict",
+      "x_username": "_decap",
+      "verified": false,
+      "pnl_usd": 16265.42,
+      "volume_usd": 562376.11,
+      "efficiency_pct": 2.8923,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$16.3K on $562K volume (2.9% efficiency). Has X presence. 'WordleAddict' implies a puzzle-solver mindset \u2014 approaching weather markets analytically. Strategy: systematic, data-driven weather market analysis with selective entry.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 80,
+      "wallet_address": "0x937bcac3a8a30c07d827ad0550c3fe3a6756bfab",
+      "username": "bhuumi",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 16105.75,
+      "volume_usd": 3436043.13,
+      "efficiency_pct": 0.4687,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$16.1K on $3.44M volume (0.47% efficiency). High-volume weather participant with thin margins. Strategy: systematic high-volume weather trading, possibly with market-making components.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 81,
+      "wallet_address": "0xf787b8a3a4c6990f48614a0b9af8422e3e7a1b63",
+      "username": "0bot",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 16023.33,
+      "volume_usd": 574242.22,
+      "efficiency_pct": 2.7903,
+      "strategies": [
+        "Bot / Algo"
+      ],
+      "strategy_detail": "$16K on $574K volume (2.8% efficiency). The '0bot' name is an explicit bot declaration. Strategy: automated trading system operating in weather markets. Moderate volume with decent efficiency suggests a reasonably well-calibrated algorithm.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 82,
+      "wallet_address": "0x85bd6a676a1b399f849b22332b1f7eca15c87f75",
+      "username": "Capillatus",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 15932.57,
+      "volume_usd": 359186.48,
+      "efficiency_pct": 4.4357,
+      "strategies": [
+        "Domain Expert"
+      ],
+      "strategy_detail": "$15.9K on $359K volume (4.4% efficiency). 'Capillatus' is a meteorological term \u2014 the name of a specific anvil-top cumulonimbus cloud formation (Cumulonimbus capillatus). This strongly suggests a meteorologist or atmospheric scientist. Strategy: domain-expert weather trading informed by professional knowledge of cloud physics and severe weather dynamics.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 83,
+      "wallet_address": "0xaf17116ae2b1476032785a67bd5b7c8c05905c20",
+      "username": "huskyvs",
+      "x_username": "husky_vs",
+      "verified": false,
+      "pnl_usd": 15898.07,
+      "volume_usd": 661298.45,
+      "efficiency_pct": 2.4041,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$15.9K on $661K volume (2.4% efficiency). Has X presence. Strategy: active weather market swing trading with diverse participation across contract types.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 84,
+      "wallet_address": "0xa37d1d1a3367c6ebc692e37c29bccb8bb015b2b4",
+      "username": "0xhana",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 15799.0,
+      "volume_usd": 321617.19,
+      "efficiency_pct": 4.9124,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$15.8K on $321K volume (4.9% efficiency). Strategy: selective weather market trading with good per-dollar returns.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 85,
+      "wallet_address": "0xd6eef76188c7068719ac881460b7431e1ae137a2",
+      "username": "PX5300",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 15701.28,
+      "volume_usd": 2276751.15,
+      "efficiency_pct": 0.6896,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$15.7K on $2.28M volume (0.69% efficiency). High-volume weather market participant. Strategy: systematic broad-market participation at scale.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 86,
+      "wallet_address": "0x64dbeb0a10678b1ff708320b19654c5d40a98c8e",
+      "username": "Miojinho",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 15613.73,
+      "volume_usd": 69002.21,
+      "efficiency_pct": 22.6279,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$15.6K on only $69K volume (22.6% efficiency) \u2014 the third-highest efficiency rate in the top 100. Miojinho is an exceptional precision bettor. Strategy: ultra-selective, extremely high-accuracy weather market entry. Bets only when conviction is maximum, resulting in outstanding capital efficiency.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 22.6% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 87,
+      "wallet_address": "0x7c63520c2ca9b336af0c205b9ccf68217bb393d4",
+      "username": "justabot0",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 15439.53,
+      "volume_usd": 751523.2,
+      "efficiency_pct": 2.0544,
+      "strategies": [
+        "Bot / Algo"
+      ],
+      "strategy_detail": "$15.4K on $751K volume (2.1% efficiency). Another explicitly named bot. Strategy: automated weather market trading with moderate volume and decent efficiency, suggesting a reasonably calibrated algorithm.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 88,
+      "wallet_address": "0x70ffe7b3911e0a9474029a42ab8b2f57b799b65f",
+      "username": "MtnMark",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 15404.6,
+      "volume_usd": 52941.54,
+      "efficiency_pct": 29.0974,
+      "strategies": [
+        "Sharp Selector",
+        "Domain Expert"
+      ],
+      "strategy_detail": "$15.4K on $52.9K volume (29.1% efficiency) \u2014 one of the very best efficiency ratios in the entire leaderboard. 'MtnMark' likely refers to mountain weather \u2014 possibly a mountain meteorologist or someone deeply familiar with high-altitude and orographic weather patterns. Strategy: surgical precision in specific weather event types, leveraging domain knowledge to nearly triple deployed capital.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 29.1% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 89,
+      "wallet_address": "0x4e25605fd905e9972efc0f4d8814530c655cd7a7",
+      "username": "(unnamed-89)",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 15099.66,
+      "volume_usd": 294971.67,
+      "efficiency_pct": 5.119,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$15.1K on $295K volume (5.1% efficiency). Anonymous but sharp \u2014 good efficiency in this tier.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 90,
+      "wallet_address": "0xff786965fa48e17dfaf320276fc42fac334ddf44",
+      "username": "sakula1",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 15019.87,
+      "volume_usd": 539752.55,
+      "efficiency_pct": 2.7827,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$15K on $539K volume (2.8% efficiency). Strategy: regular weather market swing trading with consistent incremental returns.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 91,
+      "wallet_address": "0x5ea284bb13db26c76529a944e6bf9497c8c5e97f",
+      "username": "mjf02",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 14775.84,
+      "volume_usd": 698335.84,
+      "efficiency_pct": 2.1159,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$14.8K on $698K volume (2.1% efficiency). Strategy: steady weather market participation across multiple contract types.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 92,
+      "wallet_address": "0x4ce3f17be91c3d0d6dbfed7bd4d326957dec4291",
+      "username": "(unnamed-92)",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 14764.19,
+      "volume_usd": 713335.52,
+      "efficiency_pct": 2.0697,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$14.8K on $713K volume (2.1% efficiency). Anonymous wallet with consistent weather market activity.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 93,
+      "wallet_address": "0xec3ab7f7b240e61434b66e18c004353976dfa709",
+      "username": "Billy-Ray",
+      "x_username": "BillyRayDeFi",
+      "verified": false,
+      "pnl_usd": 14701.15,
+      "volume_usd": 1087846.15,
+      "efficiency_pct": 1.3514,
+      "strategies": [
+        "Swing Trader"
+      ],
+      "strategy_detail": "$14.7K on $1.09M volume (1.4% efficiency). Has X presence under BillyRayDeFi \u2014 a DeFi-native user who branched into prediction markets. Strategy: active weather market trading alongside broader DeFi activity. Regular participation in temperature and seasonal weather contracts.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 94,
+      "wallet_address": "0x100a50d9f27bc1a884f8a47accad209a9188c6ce",
+      "username": "738925",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 14321.99,
+      "volume_usd": 3253278.87,
+      "efficiency_pct": 0.4402,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$14.3K on $3.25M volume (0.44% efficiency). High-volume anonymous weather market trader with thin margins. Strategy: systematic participation at scale.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 95,
+      "wallet_address": "0xfbb7fc19f80b26152fc5886b5eafa7d437f26f27",
+      "username": "GbushiCshuo",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 14236.18,
+      "volume_usd": 3997602.42,
+      "efficiency_pct": 0.3561,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$14.2K on $4M volume (0.36% efficiency). Strategy: very high-volume weather market participation at near-zero directional edge. Consistent with liquidity provision or market-making.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 96,
+      "wallet_address": "0xf1d77c5785eee537d4665db8b0378026c9760808",
+      "username": "ocelot-204",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 13662.71,
+      "volume_usd": 83819.7,
+      "efficiency_pct": 16.3001,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$13.7K on $83.8K volume (16.3% efficiency) \u2014 excellent. Strategy: highly selective weather market entry with strong capital efficiency. Bets infrequently but accurately.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 16.3% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 97,
+      "wallet_address": "0x5b0cf4ac002d771110689ebab5176a899a513b83",
+      "username": "mkuu",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 13556.27,
+      "volume_usd": 62875.0,
+      "efficiency_pct": 21.5607,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$13.6K on $62.9K volume (21.6% efficiency) \u2014 outstanding. Strategy: ultra-selective weather betting with exceptional capital efficiency.",
+      "on_watchlist": true,
+      "watchlist_reason": "efficiency 21.6% > 8.0% threshold \u00b7 Sharp Selector"
+    },
+    {
+      "rank": 98,
+      "wallet_address": "0x044f334595a7fd42c143e11c8ec47f23c8d1d1f1",
+      "username": "gghff",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 13554.34,
+      "volume_usd": 2031278.87,
+      "efficiency_pct": 0.6673,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$13.6K on $2.03M volume (0.67% efficiency). High-volume anonymous weather trader. Strategy: systematic market participation at scale.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 99,
+      "wallet_address": "0xa89518aca5a633a79ad1e9737209c9689f83faac",
+      "username": "teaseer",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 13495.91,
+      "volume_usd": 289519.49,
+      "efficiency_pct": 4.6615,
+      "strategies": [
+        "Sharp Selector"
+      ],
+      "strategy_detail": "$13.5K on $289K volume (4.7% efficiency). Strategy: selective weather market participation with good accuracy and consistent returns.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    },
+    {
+      "rank": 100,
+      "wallet_address": "0x50936370f48b7c7f87016ae8ec1462d0200a272c",
+      "username": "samhain4ik",
+      "x_username": null,
+      "verified": false,
+      "pnl_usd": 13289.05,
+      "volume_usd": 3254435.07,
+      "efficiency_pct": 0.4083,
+      "strategies": [
+        "Volume Whale",
+        "Swing Trader"
+      ],
+      "strategy_detail": "$13.3K on $3.25M volume (0.41% efficiency). Strategy: high-volume systematic weather market trading at thin margins. The Halloween-themed username 'samhain' (Celtic festival marking the end of harvest season) has a seasonal weather connotation.",
+      "on_watchlist": false,
+      "watchlist_reason": null
+    }
+  ]
+}
