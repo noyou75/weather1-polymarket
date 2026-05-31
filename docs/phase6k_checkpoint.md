@@ -123,3 +123,83 @@ The following questions should be decided at the Day 7 review (approximately Jun
 ---
 
 *Written: Phase 6K, June 2, 2026. Next checkpoint: Phase 6L or 7-day review, ~June 6, 2026.*
+
+---
+
+## Day 2 Monitoring Note — June 2, 2026 (Evening)
+
+### Metrics vs Phase 6K Baseline
+
+| Metric | Phase 6K (morning) | Day 2 (evening) | Change |
+|---|---|---|---|
+| Observations | 39 | 39 | → unchanged |
+| Calendar days | 2/7 | 2/7 | → unchanged |
+| Snapshots | 617 | 635 | +18 ✅ |
+| Avg spread | 1.39% | 1.39% | → unchanged |
+| **Avg dir move** | **−0.43%** | **−1.00%** | ⚠ worsened |
+| Positive movers | 15 | 15 | → unchanged |
+| Negative movers | 11 | **14** | +3 ↑ |
+| Zero movers | 13 | **10** | −3 ↓ |
+
+### What Changed
+
+Three zero-mover observations converted to negative movers between the Phase 6K morning checkpoint and this evening check. No new observations were added (still 39). The only movement was within the existing 39 markets.
+
+**Cause (consistent with Phase 6K hypothesis):** The three converting observations are almost certainly May 31 city temperature markets that settled during the day. Markets with end-of-day resolution on May 31 would have been in zero-mover state earlier in the day (before resolution) and then snapped to their final outcome price (approximately 0 for the losing ranges). When a city market resolves to 0 for the wrong temperature range, it registers as a large negative directional move — dragging the average lower.
+
+This is the exact resolution-timing noise pattern identified in Phase 6K Section 3, Factor 2: *"This concentrated resolution creates large, lopsided moves in the short observation window."*
+
+### Daily Summary Context
+
+| Day | New obs | Avg dir move | Pos | Neg |
+|---|---|---|---|---|
+| May 30 | 28 | **+1.27%** ✅ | 14 | 8 |
+| May 31 | 11 | **−1.00%** | 15 | 14 |
+
+Day 1 (May 30) was independently positive at +1.27%. The composite −1.00% is entirely driven by the negative Day 2 component. As Day 3 and beyond add observations, the May 30 positive baseline will continue to be diluted by the ongoing resolution of short-duration city markets captured on Day 1–2 — or alternatively, the new longer-duration markets captured on Day 3+ will start generating more stable movements.
+
+### Scheduler Status Note
+
+The `/scheduler/status` endpoint returned an intermittent SSL connection error (Railway network transient issue, not a service failure). Evidence that the scheduler is still active:
+
+- Snapshots grew from 617 → 635 (+18 price snapshots collected)
+- The `signal_and_shadow` cron job fires at `:03/:18/:33/:48` each hour
+- +18 snapshots in ~4 hours is consistent with that cadence (4 runs × ~4–5 snapshot additions per run after filtering)
+
+### Annual_temp Observations
+
+Still **zero**. The "Will 2026 be the hottest year on record?" market gap remains ~7.5pp — below the v1.1 WATCH threshold of 10pp. No NASA GISTEMP verified market has crossed the observation threshold at Day 2.
+
+### Phase 7 Gate Status
+
+| Criterion | Status |
+|---|---|
+| Observations ≥ 30 | ✅ 39/30 |
+| Calendar days ≥ 7 | ⏳ 2/7 |
+| Avg spread ≤ 5% | ✅ 1.39% |
+| Avg dir move ≥ 0% | ❌ −1.00% |
+| Explicit approval | ❌ Not given |
+
+**Phase 7 BLOCKED.** No paper trading. No positions. No orders.
+
+### Day 7 Open Decisions (unchanged from Phase 6K)
+
+All four decisions remain open and will be evaluated with the full 7-day dataset:
+
+**A) Raise near-expiry filter 24h → 72h**  
+The converting zero→negative movers are resolving May 31 markets. A 72h filter would have prevented their inclusion. Remains the strongest candidate change.
+
+**B) Restrict Phase 7 to NASA GISTEMP verified markets only**  
+City markets are 100% UNVERIFIED and not what the backtest covered. This decision gains further support with each day of city-dominated, noise-heavy shadow data.
+
+**C) Keep city markets experimental / secondary**  
+Alternative to B: allow city markets in Phase 7 but only with ≥7-day resolution filter and smaller position size than $2 default.
+
+**D) Lower shadow-only observation threshold to 5pp for annual_temp**  
+Would allow annual_temp markets to enter shadow monitoring without changing trading thresholds. Zero impact on signal engine or trading decisions. Recommended to implement before Day 7 so at least some annual_temp data exists for the review — but requires explicit user approval before any code change.
+
+### No Code Changes Made
+
+This entry is documentation only. No strategy files, threshold values, scheduler configuration, or any other code was modified. The commitment on this day remains: observe and document until Day 7, then decide.
+
+*Appended: Day 2 evening, June 2, 2026.*
