@@ -1,5 +1,5 @@
 """
-Shadow Signal Observer — Phase 6E/6F (hardened).
+Shadow Signal Observer — Phase 6E/6F (hardened) + Decision D.
 
 Records live signals and live prices at signal time.
 NO positions. NO paper trades. NO portfolio impact. NO capital changes.
@@ -10,6 +10,15 @@ Phase 6F hardening:
 - Daily summary written at end of each run.
 - Clear readiness status: PHASE_7_BLOCKED | COLLECTING_SHADOW_DATA | READY_FOR_REVIEW.
 - Phase 7 NEVER auto-approved; always requires explicit user written approval.
+
+Decision D (Phase 6K):
+- Separate shadow-only path for annual_temp markets with gap 5–10pp.
+- These are below the TRADING threshold (MIN_GAP_WATCH = 10pp) and produce
+  NEEDS_MORE_DATA in the main signal engine — invisible to normal shadow monitoring.
+- Recommendation stored: SHADOW_WATCH_VERIFIED_LOW_GAP (never WATCH, never ENTER_CANDIDATE).
+- Only annual_temp is included; global_monthly_temp excluded for now.
+- Settlement source must be VERIFIED_NASA_GISTEMP.
+- Engine.py is completely unchanged.
 
 Phase 7 promotion requires ALL of:
   1. >= 30 shadow observations
@@ -47,9 +56,248 @@ STATUS_BLOCKED    = "PHASE_7_BLOCKED"         # default — never passes without
 STATUS_COLLECTING = "COLLECTING_SHADOW_DATA"  # actively building observation history
 STATUS_REVIEW     = "READY_FOR_REVIEW"        # criteria met — awaiting user approval
 
+# ── Decision D: shadow-only low-gap observation for NASA GISTEMP verified markets ──
+# Gap range: [5pp, 10pp) — below trading threshold, above noise floor
+# Type whitelist: annual_temp ONLY (global_monthly_temp excluded for now)
+# Settlement: must be VERIFIED_NASA_GISTEMP
+# Recommendation: SHADOW_WATCH_VERIFIED_LOW_GAP — never WATCH, never ENTER_CANDIDATE
+#
+# SAFETY INVARIANTS (violated = logged error, function aborts gracefully):
+#   1. market_type must be in _D_TYPE_WHITELIST
+#   2. settlement source must be VERIFIED_NASA_GISTEMP
+#   3. gap must be in [_D_MIN_GAP, _D_MAX_GAP)
+#   4. recommendation is always _D_RECOMMENDATION — asserted before any write
+#   5. no connection to portfolio, paper trading, or risk engine
+#   6. engine.py is NEVER modified; this path is entirely independent
+
+_D_TYPE_WHITELIST  = {"annual_temp"}                  # only annual_temp for now
+_D_REQUIRED_SOURCE = "VERIFIED_NASA_GISTEMP"
+_D_MIN_GAP         = 5.0                              # pp — shadow observation starts here
+_D_MAX_GAP         = 10.0                             # pp — strictly below MIN_GAP_WATCH = 10pp
+_D_RECOMMENDATION  = "SHADOW_WATCH_VERIFIED_LOW_GAP"  # distinct from all trading recs
+_D_EXPLANATION     = (
+    "Decision D shadow observation: annual_temp market with gap 5–10pp. "
+    "Below trading threshold (MIN_GAP_WATCH=10pp). "
+    "Settlement source: VERIFIED_NASA_GISTEMP (confirmed June 2026). "
+    "NOT trade-eligible. NOT paper-trade eligible. Shadow price tracking only."
+)
+
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def _get_market(market_id: str) -> "Market | None":
+    """Load a single Market from DB. Returns None on any error."""
+    try:
+        with Session(engine) as s:
+            return s.exec(select(Market).where(Market.market_id == market_id)).first()
+    except Exception:
+        return None
+
+
+def _observe_annual_temp_low_gap(fetched_at: str) -> int:
+    """
+    Decision D: Shadow-only observation for annual_temp markets with gap 5–10pp.
+
+    These markets produce NEEDS_MORE_DATA in the main signal engine (gap below
+    the 10pp MIN_GAP_WATCH trading threshold) and are therefore invisible to the
+    standard shadow observer.  This function captures them under a distinct
+    recommendation so their price movement can be tracked for the Day 7 review.
+
+    SAFETY:
+    - Type whitelist enforced: only annual_temp.
+    - Settlement source verified: only VERIFIED_NASA_GISTEMP.
+    - Gap range [5pp, 10pp) enforced: hard-coded upper bound == MIN_GAP_WATCH.
+    - Recommendation asserted to be _D_RECOMMENDATION before any DB write.
+    - No connection to portfolio, paper trading, risk engine, or execution.
+    - All errors caught; returns 0 on any failure (never raises).
+
+    Returns: number of observations created or updated this cycle.
+    """
+    from ingestion.settlement_sources import get_settlement_source
+
+    stored = 0
+    try:
+        # ── Step 1: load latest signal run ────────────────────────────────────
+        with Session(engine) as s:
+            runs = s.exec(
+                select(SignalRun).order_by(SignalRun.id.desc()).limit(1)  # type: ignore[arg-type]
+            ).all()
+            if not runs:
+                return 0
+            latest_run = runs[0]
+
+            # Fetch annual_temp NEEDS_MORE_DATA signals with passing liquidity
+            candidates = s.exec(
+                select(Signal).where(
+                    Signal.run_id       == latest_run.id,
+                    Signal.market_type  == "annual_temp",       # whitelist: type only
+                    Signal.recommendation == "NEEDS_MORE_DATA", # below trading threshold
+                    Signal.liquidity_ok == True,                # noqa: E712
+                )
+            ).all()
+
+        if not candidates:
+            return 0
+
+        # ── Step 2: apply gap range and settlement source filters ──────────────
+        eligible: list[Signal] = []
+        for sig in candidates:
+            gap = abs(sig.probability_gap_pp or 0.0)
+
+            # SAFETY GATE 1: gap must be in the Decision D shadow-only range
+            if not (_D_MIN_GAP <= gap < _D_MAX_GAP):
+                continue
+
+            # SAFETY GATE 2: market type must be in whitelist (belt and suspenders)
+            if sig.market_type not in _D_TYPE_WHITELIST:
+                logger.error(
+                    "Decision D safety violation: market_type=%s not in whitelist. Skipping.",
+                    sig.market_type,
+                )
+                continue
+
+            # SAFETY GATE 3: settlement source must be verified NASA GISTEMP
+            actual_source = get_settlement_source(sig.market_type)
+            if actual_source != _D_REQUIRED_SOURCE:
+                logger.warning(
+                    "Decision D: market_type=%s settlement=%s (required %s). Skipping.",
+                    sig.market_type, actual_source, _D_REQUIRED_SOURCE,
+                )
+                continue
+
+            eligible.append(sig)
+
+        if not eligible:
+            return 0
+
+        logger.info(
+            "Decision D: %d annual_temp signals eligible (gap 5-10pp, verified source)",
+            len(eligible),
+        )
+
+        # ── Step 3: upsert observations and snapshots ─────────────────────────
+        snapshots: list[ShadowPriceSnapshot] = []
+
+        with Session(engine, expire_on_commit=False) as s:
+            for sig in eligible:
+                try:
+                    mkt = _get_market(sig.market_id)
+                    if not mkt:
+                        continue
+
+                    bid, ask = mkt.best_bid, mkt.best_ask
+                    mid    = _mid(bid, ask)
+                    spread = mkt.spread
+                    liq    = mkt.liquidity
+
+                    # SAFETY GATE 4: recommendation must ALWAYS be _D_RECOMMENDATION
+                    # This is the critical invariant — asserted before every write.
+                    final_rec = _D_RECOMMENDATION
+                    assert final_rec == _D_RECOMMENDATION, (
+                        f"BUG: Decision D produced unexpected recommendation: {final_rec}"
+                    )
+                    assert final_rec != "ENTER_CANDIDATE", (
+                        "BUG: ENTER_CANDIDATE must never be generated in Decision D path"
+                    )
+                    assert final_rec != "WATCH", (
+                        "BUG: WATCH must not be used in Decision D — use SHADOW_WATCH_VERIFIED_LOW_GAP"
+                    )
+
+                    existing = s.exec(
+                        select(ShadowSignalObservation).where(
+                            ShadowSignalObservation.market_id == sig.market_id
+                        )
+                    ).first()
+
+                    if existing:
+                        # Update prices; PRESERVE first_seen_at and initial_mid_price
+                        existing.last_updated_at     = fetched_at
+                        existing.times_seen          += 1
+                        existing.latest_best_bid     = bid
+                        existing.latest_best_ask     = ask
+                        existing.latest_mid_price    = mid
+                        existing.latest_spread       = spread
+                        existing.is_active           = mkt.is_active and not mkt.is_closed
+                        existing.directional_move_pct = _directional_move(
+                            existing.side, existing.initial_mid_price, mid
+                        )
+                        # Do NOT upgrade recommendation — stays _D_RECOMMENDATION permanently
+                        s.add(existing)
+                        obs_id          = existing.id
+                        obs_initial_mid = existing.initial_mid_price
+                        obs_side        = existing.side
+                    else:
+                        obs = ShadowSignalObservation(
+                            market_id           = sig.market_id,
+                            question            = sig.question,
+                            event_title         = sig.event_title,
+                            market_type         = sig.market_type,
+                            side                = sig.side,
+                            recommendation      = final_rec,         # always _D_RECOMMENDATION
+                            confidence_score    = sig.confidence_score,
+                            model_prob          = sig.model_estimated_prob,
+                            market_implied_prob = sig.market_implied_prob,
+                            gap_pp              = sig.probability_gap_pp,
+                            settlement_source   = _D_REQUIRED_SOURCE,  # always VERIFIED_NASA_GISTEMP
+                            first_seen_at       = fetched_at,
+                            initial_best_bid    = bid,
+                            initial_best_ask    = ask,
+                            initial_mid_price   = mid,
+                            initial_spread      = spread,
+                            initial_liquidity   = liq,
+                            last_updated_at     = fetched_at,
+                            latest_best_bid     = bid,
+                            latest_best_ask     = ask,
+                            latest_mid_price    = mid,
+                            latest_spread       = spread,
+                            directional_move_pct = 0.0,
+                            is_active           = mkt.is_active and not mkt.is_closed,
+                            times_seen          = 1,
+                            explanation         = _D_EXPLANATION,
+                        )
+                        s.add(obs)
+                        s.flush()
+                        obs_id          = obs.id
+                        obs_initial_mid = mid
+                        obs_side        = sig.side
+
+                    snapshots.append(ShadowPriceSnapshot(
+                        observation_id       = obs_id,
+                        market_id            = sig.market_id,
+                        recorded_at          = fetched_at,
+                        best_bid             = bid,
+                        best_ask             = ask,
+                        mid_price            = mid,
+                        spread               = spread,
+                        liquidity            = liq,
+                        directional_move_pct = _directional_move(obs_side, obs_initial_mid, mid),
+                    ))
+                    stored += 1
+
+                except AssertionError as ae:
+                    # Safety gate violation — log clearly, skip this market, continue
+                    logger.error("Decision D SAFETY VIOLATION for %s: %s", sig.market_id, ae)
+                    continue
+                except Exception as e:
+                    logger.warning("Decision D error for %s: %s", sig.market_id, e)
+                    continue
+
+            for snap in snapshots:
+                s.add(snap)
+            s.commit()
+
+        logger.info(
+            "Decision D complete: %d annual_temp obs stored/updated, %d snapshots",
+            stored, len(snapshots),
+        )
+
+    except Exception as e:
+        logger.error("Decision D outer error (non-fatal): %s", e)
+        return 0
+
+    return stored
 
 
 def _today_utc() -> str:
@@ -228,6 +476,19 @@ def run_shadow_observation() -> dict:
     result["new_observations"] = new_obs
     result["updated_observations"] = upd_obs
     result["snapshots_stored"] = len(snapshots)
+
+    # ── Decision D: shadow-only low-gap path for verified annual_temp markets ──
+    # Isolated try/except: any failure here cannot break the main shadow observer.
+    # Engine.py is untouched; trading thresholds are unchanged.
+    # Creates/updates observations with SHADOW_WATCH_VERIFIED_LOW_GAP only.
+    try:
+        d_count = _observe_annual_temp_low_gap(now)
+        result["decision_d_low_gap_obs"] = d_count
+    except Exception as e:
+        logger.error("Decision D call error (non-fatal, main observer unaffected): %s", e)
+        result["errors"].append(f"decision_d: {e}")
+        result["decision_d_low_gap_obs"] = 0
+    # ── End Decision D ─────────────────────────────────────────────────────────
 
     # ── Update daily summary ───────────────────────────────────────────────────
     _update_daily_summary(today, new_obs, upd_obs, len(snapshots))
