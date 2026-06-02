@@ -324,10 +324,149 @@ def _directional_move(side: str, initial: float | None, latest: float | None) ->
     return round(raw if side == "YES" else -raw, 3)
 
 
+def _refresh_existing_observations(now: str) -> tuple[int, int, list[str]]:
+    """
+    Option C: Unconditional price-tracking loop for existing active observations.
+
+    Runs BEFORE the signal-based new-observation loop.
+    Updates existing ShadowSignalObservation records from current Market prices
+    regardless of whether the latest SignalRun has any qualifying signals.
+
+    This fixes the June 2 freeze: when all markets SKIP in the signal engine,
+    existing observations were left stale.  This loop decouples price tracking
+    from signal generation.
+
+    SAFETY:
+    - Never creates new observations.
+    - Never generates ENTER_CANDIDATE.
+    - Never touches portfolio, paper trading, or risk engine.
+    - Marks observations inactive if their market closed or passed end_date.
+    - All errors caught individually; one failure does not affect others.
+
+    Returns: (obs_updated, snaps_added, errors)
+    """
+    from datetime import date as date_type
+
+    updated = 0
+    snaps_added = 0
+    errors: list[str] = []
+    today_date = date_type.fromisoformat(_today_utc())
+
+    try:
+        with Session(engine) as s:
+            active_obs = s.exec(
+                select(ShadowSignalObservation).where(
+                    ShadowSignalObservation.is_active == True  # noqa: E712
+                )
+            ).all()
+    except Exception as e:
+        errors.append(f"load active obs: {e}")
+        return 0, 0, errors
+
+    if not active_obs:
+        return 0, 0, errors
+
+    snapshots: list[ShadowPriceSnapshot] = []
+
+    with Session(engine, expire_on_commit=False) as s:
+        for obs in active_obs:
+            try:
+                mkt = _get_market(obs.market_id)
+
+                # ── Determine if market should be deactivated ──────────────────
+                should_deactivate = False
+                if mkt is None:
+                    should_deactivate = True
+                elif mkt.is_closed:
+                    should_deactivate = True
+                elif mkt.end_date:
+                    try:
+                        end = date_type.fromisoformat(mkt.end_date[:10])
+                        if end < today_date:
+                            should_deactivate = True
+                    except ValueError:
+                        pass
+
+                # ── Get fresh prices (even for one final snapshot before deactivation) ──
+                bid = mkt.best_bid if mkt else None
+                ask = mkt.best_ask if mkt else None
+                mid = _mid(bid, ask)
+                spread = mkt.spread if mkt else None
+                liq    = mkt.liquidity if mkt else None
+
+                # ── Update observation fields ──────────────────────────────────
+                obs_in_session = s.exec(
+                    select(ShadowSignalObservation).where(
+                        ShadowSignalObservation.id == obs.id
+                    )
+                ).first()
+                if not obs_in_session:
+                    continue
+
+                obs_in_session.last_updated_at = now
+                obs_in_session.times_seen += 1
+                if mid is not None:
+                    obs_in_session.latest_best_bid  = bid
+                    obs_in_session.latest_best_ask  = ask
+                    obs_in_session.latest_mid_price = mid
+                    obs_in_session.latest_spread    = spread
+                    obs_in_session.directional_move_pct = _directional_move(
+                        obs_in_session.side,
+                        obs_in_session.initial_mid_price,
+                        mid,
+                    )
+                if should_deactivate:
+                    obs_in_session.is_active = False
+
+                s.add(obs_in_session)
+
+                # ── Add price snapshot (even the final one before deactivation) ─
+                snapshots.append(ShadowPriceSnapshot(
+                    observation_id       = obs.id,
+                    market_id            = obs.market_id,
+                    recorded_at          = now,
+                    best_bid             = bid,
+                    best_ask             = ask,
+                    mid_price            = mid,
+                    spread               = spread,
+                    liquidity            = liq,
+                    directional_move_pct = _directional_move(
+                        obs.side, obs.initial_mid_price, mid
+                    ),
+                ))
+                updated += 1
+
+            except Exception as e:
+                errors.append(f"obs {obs.id} (market {obs.market_id}): {e}")
+                logger.warning("Option C refresh error for obs %d: %s", obs.id, e)
+
+        for snap in snapshots:
+            s.add(snap)
+        try:
+            s.commit()
+            snaps_added = len(snapshots)
+        except Exception as e:
+            errors.append(f"commit: {e}")
+            logger.error("Option C commit error: %s", e)
+
+    logger.info(
+        "Option C (existing obs refresh): updated=%d snaps=%d errors=%d",
+        updated, snaps_added, len(errors),
+    )
+    return updated, snaps_added, errors
+
+
 def run_shadow_observation() -> dict:
     """
     Main entry point. Hardened for daily recurring runs.
-    - Upsert observations (never duplicates by market_id).
+
+    Option C (Phase 6K fix): existing active observations are updated from
+    current Market prices unconditionally at the start of each cycle, BEFORE
+    the signal-based new-observation loop. This prevents observations from
+    freezing when the latest SignalRun has 0 qualifying signals.
+
+    - Existing observation price refresh: unconditional (Option C).
+    - New observation creation: only when latest SignalRun has qualifying signals.
     - Add price snapshot each run.
     - Update daily summary.
     SAFETY: No positions. No P&L. No portfolio changes.
@@ -337,12 +476,29 @@ def run_shadow_observation() -> dict:
     result = {
         "run_at": now,
         "date_utc": today,
-        "new_observations": 0,
-        "updated_observations": 0,
-        "snapshots_stored": 0,
+        "existing_observations_updated": 0,   # Option C: existing obs refreshed
+        "existing_snapshots_added": 0,         # Option C: snapshots from existing obs
+        "new_observations": 0,                 # signal-based: new obs added
+        "updated_observations": 0,             # signal-based: existing obs hit by signal
+        "snapshots_stored": 0,                 # signal-based: snapshots
         "errors": [],
         "status": STATUS_BLOCKED,
     }
+
+    # ── Option C: unconditional refresh of existing active observations ────────
+    # Runs BEFORE signal-based loop.
+    # Updates last_updated_at, times_seen, prices, directional_move for ALL
+    # active observations, even when latest SignalRun has 0 qualifying signals.
+    # NEVER creates new observations. NEVER generates ENTER_CANDIDATE.
+    try:
+        c_updated, c_snaps, c_errors = _refresh_existing_observations(now)
+        result["existing_observations_updated"] = c_updated
+        result["existing_snapshots_added"]      = c_snaps
+        result["errors"].extend(c_errors)
+    except Exception as e:
+        logger.error("Option C outer error (non-fatal): %s", e)
+        result["errors"].append(f"option_c: {e}")
+    # ── End Option C ───────────────────────────────────────────────────────────
 
     # ── Load latest signal run ─────────────────────────────────────────────────
     with Session(engine) as s:
@@ -473,9 +629,9 @@ def run_shadow_observation() -> dict:
             s.add(snap)
         s.commit()
 
-    result["new_observations"] = new_obs
+    result["new_observations"]    = new_obs
     result["updated_observations"] = upd_obs
-    result["snapshots_stored"] = len(snapshots)
+    result["snapshots_stored"]    = len(snapshots)
 
     # ── Decision D: shadow-only low-gap path for verified annual_temp markets ──
     # Isolated try/except: any failure here cannot break the main shadow observer.
@@ -491,7 +647,10 @@ def run_shadow_observation() -> dict:
     # ── End Decision D ─────────────────────────────────────────────────────────
 
     # ── Update daily summary ───────────────────────────────────────────────────
-    _update_daily_summary(today, new_obs, upd_obs, len(snapshots))
+    # Pass total snapshot count (Option C + signal-based) and total updates
+    total_snaps  = result["existing_snapshots_added"] + len(snapshots)
+    total_upd    = result["existing_observations_updated"] + upd_obs
+    _update_daily_summary(today, new_obs, total_upd, total_snaps)
 
     # ── Compute readiness status ───────────────────────────────────────────────
     status_data = get_shadow_status()
@@ -499,8 +658,11 @@ def run_shadow_observation() -> dict:
     result["readiness"] = status_data
 
     logger.info(
-        "Shadow obs: new=%d updated=%d snaps=%d status=%s",
-        new_obs, upd_obs, len(snapshots), result["status"],
+        "Shadow obs: existing_upd=%d existing_snaps=%d | new=%d sig_upd=%d sig_snaps=%d | status=%s",
+        result["existing_observations_updated"],
+        result["existing_snapshots_added"],
+        new_obs, upd_obs, len(snapshots),
+        result["status"],
     )
     return result
 
